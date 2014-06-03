@@ -1,7 +1,4 @@
 
-
-
-
 Position.create([
     { position: 'QB' },
     { position: 'RB' },
@@ -17,19 +14,20 @@ Position.create([
     { position: 'S' },
     { position: 'CB' },
     { position: 'K' },
+    { position: 'DEF' },
     { position: 'P' }
 ])
 
 Team.create([
     {
         name: 'Buffalo Bills',
-        short_name: 'Buf',
+        short_name: 'BUF',
         division: 'AFC East',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/2.png',
     },
     {
         name: 'Miami Dolphins',
-        short_name: 'Mia',
+        short_name: 'MIA',
         division: 'AFC East',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/15.png',
     },
@@ -47,55 +45,55 @@ Team.create([
     },
     {
         name: 'Baltimore Ravens',
-        short_name: 'Bal',
+        short_name: 'BAL',
         division: 'AFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/33.png',
     },
     {
         name: 'Cincinnati Bengals',
-        short_name: 'Cin',
+        short_name: 'CIN',
         division: 'AFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/4.png',
     },
     {
         name: 'Cleveland Browns',
-        short_name: 'Cle',
+        short_name: 'CLE',
         division: 'AFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/5.png',
     },
     {
         name: 'Pittsburgh Steelers',
-        short_name: 'Pit',
+        short_name: 'PIT',
         division: 'AFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/23.png',
     },
     {
         name: 'Houston Texans',
-        short_name: 'Hou',
+        short_name: 'HOU',
         division: 'AFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/34.png',
     },
     {
         name: 'Indianapolis Colts',
-        short_name: 'Ind',
+        short_name: 'IND',
         division: 'AFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/11.png',
     },
     {
         name: 'Jacksonville Jaguars',
-        short_name: 'Jax',
+        short_name: 'JAC',
         division: 'AFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/30.png',
     },
     {
         name: 'Tennessee Titans',
-        short_name: 'Ten',
+        short_name: 'TEN',
         division: 'AFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/10.png',
     },
     {
         name: 'Denver Broncos',
-        short_name: 'Den',
+        short_name: 'DEN',
         division: 'AFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/7.png',
     },
@@ -107,19 +105,19 @@ Team.create([
     },
     {
         name: 'Oakland Raiders',
-        short_name: 'Oak',
+        short_name: 'OAK',
         division: 'AFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/13.png',
     },
     {
         name: 'San Diego Chargers',
-        short_name: 'San',
+        short_name: 'SD',
         division: 'AFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/24.png',
     },
     {
         name: 'Dallas Cowboys',
-        short_name: 'Dal',
+        short_name: 'DAL',
         division: 'NFC East',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/6.png',
     },
@@ -131,25 +129,25 @@ Team.create([
     },
     {
         name: 'Philadelphia Eagles',
-        short_name: 'Phi',
+        short_name: 'PHI',
         division: 'NFC East',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/21.png',
     },
     {
         name: 'Washington Redskins',
-        short_name: 'Was',
+        short_name: 'WAS',
         division: 'NFC East',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/28.png',
     },
     {
         name: 'Chicago Bears',
-        short_name: 'Chi',
+        short_name: 'CHI',
         division: 'NFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/3.png',
     },
     {
         name: 'Detroit Lions',
-        short_name: 'Det',
+        short_name: 'DET',
         division: 'NFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/8.png',
     },
@@ -161,19 +159,19 @@ Team.create([
     },
     {
         name: 'Minnesota Vikings',
-        short_name: 'Min',
+        short_name: 'MIN',
         division: 'NFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/16.png',
     },
     {
         name: 'Atlanta Falcons',
-        short_name: 'Atl',
+        short_name: 'ATL',
         division: 'NFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/1.png',
     },
     {
         name: 'Carolina Panthers',
-        short_name: 'Car',
+        short_name: 'CAR',
         division: 'NFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/29.png',
     },
@@ -191,58 +189,33 @@ Team.create([
     },
     {
         name: 'Arizona Cardinals',
-        short_name: 'Ari',
+        short_name: 'ARI',
         division: 'NFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/22.png',
     },
     {
         name: 'San Francisco 49ers',
-        short_name: 'San',
+        short_name: 'SF',
         division: 'NFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/25.png',
     },
     {
         name: 'Seattle Seahawks',
-        short_name: 'Sea',
+        short_name: 'SEA',
         division: 'NFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/26.png',
     },
     {
         name: 'St. Louis Rams',
-        short_name: 'Stl',
+        short_name: 'STL',
         division: 'NFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/14.png',
     }
 ])
 
 
-
-# ('A'..'W').each do |letter|
-
-#     doc = Nokogiri::HTML(open("http://sports.yahoo.com/nfl/players?type=lastname&query=#{letter}"))
-
-#     rows = doc.xpath("//tr[@class='ysprow1']")
-
-#     rows.each do |row|
-#         position = Position.find_by_position(row.css('td')[1].text)
-#         team     = Team.find_by_name(row.css('td')[2].text)
-
-#         Player.create(name: row.css('td')[0].text, position_id: position.id, team_id: team.id)
-#     end
-
-#     rows = doc.xpath("//tr[@class='ysprow2']")
-
-#     rows.each do |row|
-#         position = Position.find_by_position(row.css('td')[1].text)
-#         team     = Team.find_by_name(row.css('td')[2].text)
-
-#         Player.create(name: row.css('td')[0].text, position_id: position.id, team_id: team.id)
-#     end
-
-# end
-
+# Get all Players
 players = FantasyFootballNerd.players
-
 players.each do |player|
 
     #   playerId: '2684'
@@ -250,7 +223,6 @@ players.each do |player|
     #   jersey: '0'
     #   lname: Murray
     #   fname: Patrick
-    #   displayName: Patrick Murray
     #   team: TB
     #   position: K
     #   height: 5-7
@@ -258,45 +230,60 @@ players.each do |player|
     #   dob: 0000-00-00
     #   college: Fordham
 
-    # t.string  "first_name"
-    # t.string  "last_name"
-    # t.integer "ffn_player_id"
-    # t.integer "position_id"
-    # t.integer "team_id"
-    # t.string  "completions"
-    # t.string  "attempts"
-    # t.string  "passing_yards"
-    # t.string  "passing_td"
-    # t.string  "passing_int"
-    # t.string  "rush_yards"
-    # t.string  "rush_td"
-    # t.string  "fantasy_points"
-    # t.boolean "active"
-    # t.string  "jersey"
-    # t.string  "height"
-    # t.string  "weight"
-    # t.string  "dob"
-    # t.string  "college"
-    # t.integer "min_price"
-    # t.integer "max_price"
-    # t.integer "avg_price"
-    # t.float   "ffn_rank"
-    # t.integer "position_rank"
-    # t.integer "overall_rank"
-
-    position = Position.find_by_position(player.position)
-    team     = Team.find_by_short_name(player.team)
+    position = Position.find_by_position(player['position'])
+    team     = Team.find_by_short_name(player['team'])
 
     Player.create(
-        first_name: player.fname,
-        last_name: player.lname,
-        ffn_player_id: player.playerId,
-        active: player.active,
-        height: player.height,
-        weight: player.weight,
-        dob: player.dob,
-        college: player.college,
+        first_name: player['fname'],
+        last_name: player['lname'],
+        ffn_player_id: player['playerId'],
+        active: player['active'],
+        jersey: player['jersey'],
+        height: player['height'],
+        weight: player['weight'],
+        dob: player['dob'],
+        college: player['college'],
         position_id: position.id,
         team_id: team.id
     )
+
+end
+
+# Draft rankings
+rankings = FantasyFootballNerd.draft_rankings
+rankings.each do |ranking|
+
+    # "playerId": "145",
+    # "nerdRank": "1.249",
+    # "positionRank": "1",
+    # "overallRank": "1"
+
+    player = Player.find_by_ffn_player_id(ranking['playerId'])
+
+    player.ffn_rank = ranking['nerdRank']
+    player.position_rank = ranking['positionRank']
+    player.overall_rank = ranking['overallRank']
+
+    player.save
+
+end
+
+# Auction rankings
+rankings = FantasyFootballNerd.auction
+rankings.each do |ranking|
+
+    # "playerId": "259",
+    # "minPrice": "54",
+    # "maxPrice": "54",
+    # "avgPrice": "54",
+
+    player = Player.find_by_ffn_player_id(ranking['playerId'])
+
+    if player
+        player.min_price = ranking['minPrice'].to_i
+        player.max_price = ranking['maxPrice'].to_i
+        player.avg_price = ranking['avgPrice'].to_i
+
+        player.save
+    end
 end

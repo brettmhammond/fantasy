@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20140523230258) do
     t.string  "jersey"
     t.string  "height"
     t.string  "weight"
-    t.string  "dob"
+    t.date    "dob"
     t.string  "college"
     t.integer "min_price"
     t.integer "max_price"
