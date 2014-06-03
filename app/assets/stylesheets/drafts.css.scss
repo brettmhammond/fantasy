@@ -1,0 +1,27 @@
+.draft_board{
+    width: auto;
+    height: auto;
+    overflow: auto;
+    border:1px solid #999;
+
+    .team_column{
+        float:left;
+        width:auto;
+        text-align: center;
+        // display: table;
+        border:1px solid #999;
+
+
+        .team_name{
+            border-bottom:1px solid #999;
+        }
+
+        .pick_slot{
+            display: block;
+
+            height:50px;
+            border-bottom:1px solid #999;
+        }
+
+    }
+}

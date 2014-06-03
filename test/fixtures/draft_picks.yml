@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  draft_id: 
+  fantasy_team_id: 
+  player_id: 
+  price: 1
+  round: 1
+
+two:
+  draft_id: 
+  fantasy_team_id: 
+  player_id: 
+  price: 1
+  round: 1

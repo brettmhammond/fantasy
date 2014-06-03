@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Draft:</strong>
+  <%= @draft_pick.draft.id %>
+</p>
+
+<p>
+  <strong>Fantasy team:</strong>
+  <%= @draft_pick.fantasy_team.name %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @draft_pick.player.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @draft_pick.price %>
+</p>
+
+<p>
+  <strong>Round:</strong>
+  <%= @draft_pick.round %>
+</p>
+
+<%= link_to 'Edit', edit_draft_pick_path(@draft_pick) %> |
+<%= link_to 'Back', draft_picks_path %>

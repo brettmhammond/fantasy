@@ -1,5 +1,6 @@
-require 'nokogiri'
-require 'open-uri'
+
+
+
 
 Position.create([
     { position: 'QB' },
@@ -100,7 +101,7 @@ Team.create([
     },
     {
         name: 'Kansas City Chiefs',
-        short_name: 'Kan',
+        short_name: 'KC',
         division: 'AFC West',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/12.png',
     },
@@ -154,7 +155,7 @@ Team.create([
     },
     {
         name: 'Green Bay Packers',
-        short_name: 'Gre',
+        short_name: 'GB',
         division: 'NFC North',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/9.png',
     },
@@ -178,13 +179,13 @@ Team.create([
     },
     {
         name: 'New Orleans Saints',
-        short_name: 'Nos',
+        short_name: 'NO',
         division: 'NFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/18.png',
     },
     {
         name: 'Tampa Bay Buccaneers',
-        short_name: 'Tam',
+        short_name: 'TB',
         division: 'NFC South',
         logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/27.png',
     },
@@ -215,27 +216,87 @@ Team.create([
 ])
 
 
-('A'..'W').each do |letter|
 
-    doc = Nokogiri::HTML(open("http://sports.yahoo.com/nfl/players?type=lastname&query=#{letter}"))
+# ('A'..'W').each do |letter|
 
-    rows = doc.xpath("//tr[@class='ysprow1']")
+#     doc = Nokogiri::HTML(open("http://sports.yahoo.com/nfl/players?type=lastname&query=#{letter}"))
 
-    rows.each do |row|
-        position = Position.find_by_position(row.css('td')[1].text)
-        team     = Team.find_by_name(row.css('td')[2].text)
+#     rows = doc.xpath("//tr[@class='ysprow1']")
 
-        Player.create(name: row.css('td')[0].text, position_id: position.id, team_id: team.id)
-    end
+#     rows.each do |row|
+#         position = Position.find_by_position(row.css('td')[1].text)
+#         team     = Team.find_by_name(row.css('td')[2].text)
 
-    rows = doc.xpath("//tr[@class='ysprow2']")
+#         Player.create(name: row.css('td')[0].text, position_id: position.id, team_id: team.id)
+#     end
 
-    rows.each do |row|
-        position = Position.find_by_position(row.css('td')[1].text)
-        team     = Team.find_by_name(row.css('td')[2].text)
+#     rows = doc.xpath("//tr[@class='ysprow2']")
 
-        Player.create(name: row.css('td')[0].text, position_id: position.id, team_id: team.id)
-    end
+#     rows.each do |row|
+#         position = Position.find_by_position(row.css('td')[1].text)
+#         team     = Team.find_by_name(row.css('td')[2].text)
 
+#         Player.create(name: row.css('td')[0].text, position_id: position.id, team_id: team.id)
+#     end
+
+# end
+
+players = FantasyFootballNerd.players
+
+players.each do |player|
+
+    #   playerId: '2684'
+    #   active: '1'
+    #   jersey: '0'
+    #   lname: Murray
+    #   fname: Patrick
+    #   displayName: Patrick Murray
+    #   team: TB
+    #   position: K
+    #   height: 5-7
+    #   weight: '182'
+    #   dob: 0000-00-00
+    #   college: Fordham
+
+    # t.string  "first_name"
+    # t.string  "last_name"
+    # t.integer "ffn_player_id"
+    # t.integer "position_id"
+    # t.integer "team_id"
+    # t.string  "completions"
+    # t.string  "attempts"
+    # t.string  "passing_yards"
+    # t.string  "passing_td"
+    # t.string  "passing_int"
+    # t.string  "rush_yards"
+    # t.string  "rush_td"
+    # t.string  "fantasy_points"
+    # t.boolean "active"
+    # t.string  "jersey"
+    # t.string  "height"
+    # t.string  "weight"
+    # t.string  "dob"
+    # t.string  "college"
+    # t.integer "min_price"
+    # t.integer "max_price"
+    # t.integer "avg_price"
+    # t.float   "ffn_rank"
+    # t.integer "position_rank"
+    # t.integer "overall_rank"
+
+    position = Position.find_by_position(player.position)
+    team     = Team.find_by_short_name(player.team)
+
+    Player.create(
+        first_name: player.fname,
+        last_name: player.lname,
+        ffn_player_id: player.playerId,
+        active: player.active,
+        height: player.height,
+        weight: player.weight,
+        dob: player.dob,
+        college: player.college,
+        position_id: position.id,
+        team_id: team.id
+    )
 end
-

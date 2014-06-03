@@ -14,6 +14,7 @@
       <tr>
         <td><%= league.name %></td>
         <td><%= league.total_rounds %></td>
+        <td>$<%= league.max_amount %></td>
         <td><%= link_to 'Show', league %></td>
         <td><%= link_to 'Edit', edit_league_path(league) %></td>
         <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>

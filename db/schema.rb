@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516043009) do
+ActiveRecord::Schema.define(version: 20140523230258) do
+
+  create_table "draft_picks", force: true do |t|
+    t.integer  "draft_id"
+    t.integer  "fantasy_team_id"
+    t.integer  "player_id"
+    t.integer  "price"
+    t.integer  "round"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "draft_picks", ["draft_id"], name: "index_draft_picks_on_draft_id"
+  add_index "draft_picks", ["fantasy_team_id"], name: "index_draft_picks_on_fantasy_team_id"
+  add_index "draft_picks", ["player_id"], name: "index_draft_picks_on_player_id"
+
+  create_table "drafts", force: true do |t|
+    t.integer  "league_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "drafts", ["league_id"], name: "index_drafts_on_league_id"
 
   create_table "fantasy_teams", force: true do |t|
     t.string   "name"
@@ -30,16 +52,35 @@ ActiveRecord::Schema.define(version: 20140516043009) do
   end
 
   create_table "players", force: true do |t|
-    t.string  "name"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.integer "ffn_player_id"
     t.integer "position_id"
     t.integer "team_id"
-    t.string  "headshot"
+    t.string  "completions"
+    t.string  "attempts"
+    t.string  "passing_yards"
+    t.string  "passing_td"
+    t.string  "passing_int"
+    t.string  "rush_yards"
+    t.string  "rush_td"
+    t.string  "fantasy_points"
+    t.boolean "active"
+    t.string  "jersey"
+    t.string  "height"
+    t.string  "weight"
+    t.string  "dob"
+    t.string  "college"
+    t.integer "min_price"
+    t.integer "max_price"
+    t.integer "avg_price"
+    t.float   "ffn_rank"
+    t.integer "position_rank"
+    t.integer "overall_rank"
   end
 
   create_table "positions", force: true do |t|
-    t.string   "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "position"
   end
 
   create_table "teams", force: true do |t|

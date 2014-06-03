@@ -10,5 +10,12 @@
   <%= @league.total_rounds %>
 </p>
 
+<p>
+  <strong>Max Amount:</strong>
+  $<%= @league.max_amount %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_league_path(@league) %> |
 <%= link_to 'Back', leagues_path %>

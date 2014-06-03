@@ -1,0 +1,63 @@
+<h1>
+    <center><%= @draft.league.name %></center>
+</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <% @draft.league.fantasy_teams.each do |fantasy_team| %>
+                <th>
+                    <center>
+                        <%= fantasy_team.name %>
+                    </center>
+                </th>
+            <% end %>
+        </tr>
+    </thead>
+    <tbody>
+
+        <% @draft.league.total_rounds.times do |round|  round = round + 1 %>
+            <tr>
+                <td><%= round %></td>
+
+                <% @draft.league.fantasy_teams.each do |fantasy_team| %>
+                    <td>
+                        <%
+                            @draft.draft_picks.each do |pick|
+
+                                if pick.fantasy_team.id == fantasy_team.id && pick.round == round
+                            %>
+                                     <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.short_name.upcase %> - $<%= pick.price %>
+                            <%
+                                end
+                            end
+
+                        %>
+                    </td>
+                <% end %>
+
+            </tr>
+        <% end %>
+
+    </tbody>
+</table>
+
+
+
+
+
+
+<h5>Draft Picks</h5>
+<% @draft.draft_picks.each do |pick| %>
+     <%= pick.fantasy_team.name %> - <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.short_name %> - $<%= pick.price %> / $<%= @draft.league.max_amount - pick.price %> <br />
+<% end %>
+
+
+
+
+<br />
+<br />
+<br />
+<%= link_to 'Edit', edit_draft_path(@draft) %> |
+<%= link_to 'Back', drafts_path %>
