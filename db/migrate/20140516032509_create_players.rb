@@ -3,6 +3,7 @@ class CreatePlayers < ActiveRecord::Migration
     create_table :players do |t|
       t.string :first_name
       t.string :last_name
+      t.string :name
       t.integer :ffn_player_id
       t.integer :position_id
       t.integer :team_id
@@ -21,12 +22,6 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :weight
       t.date :dob
       t.string :college
-      t.integer :min_price
-      t.integer :max_price
-      t.integer :avg_price
-      t.float :ffn_rank
-      t.integer :position_rank
-      t.integer :overall_rank
     end
   end
 end

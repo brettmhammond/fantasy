@@ -1,6 +1,6 @@
 <h1>Listing players</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,7 +13,10 @@
   <tbody>
     <% @players.each do |player| %>
       <tr>
-        <td><%= player.last_name %>, <%= player.first_name %></td>
+        <td>
+          <img src="http://www.fantasyfootballnerd.com/images/players/<%= player.ffn_player_id %>.jpg" width="50" alt="" />
+          <%= player.last_name %>, <%= player.first_name %>
+        </td>
         <td><%= player.position.position %></td>
         <td><%= player.team.name %></td>
         <td><%= link_to 'Show', player %></td>

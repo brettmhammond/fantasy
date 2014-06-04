@@ -24,8 +24,8 @@
     <%= f.select :team_id, options_from_collection_for_select(Team.all.order('name'), "id", "name", @player.team_id) %>
   </div>
   <div class="field">
-    <%= f.label :headshot %><br>
-    <%= f.text_field :headshot %>
+    <%= f.label :ffn_player_id %><br>
+    <%= f.text_field :ffn_player_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

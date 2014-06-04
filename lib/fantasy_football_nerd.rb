@@ -60,6 +60,15 @@ class FantasyFootballNerd
     response['DraftRankings']
   end
 
+  def self.draft_projections(position=nil)
+    url = feed_url(:draft_projections)
+    if not position.nil?
+      url += "/#{position.upcase}"
+    end
+    response = get_resource(url)
+    response['DraftProjections']
+  end
+
   def self.byes
     url = feed_url(:byes)
     get_resource(url)

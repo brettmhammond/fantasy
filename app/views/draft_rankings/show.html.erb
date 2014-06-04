@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @draft_ranking.player %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @draft_ranking.year %>
+</p>
+
+<p>
+  <strong>Ffn rank:</strong>
+  <%= @draft_ranking.ffn_rank %>
+</p>
+
+<p>
+  <strong>Position rank:</strong>
+  <%= @draft_ranking.position_rank %>
+</p>
+
+<p>
+  <strong>Overall rank:</strong>
+  <%= @draft_ranking.overall_rank %>
+</p>
+
+<%= link_to 'Edit', edit_draft_ranking_path(@draft_ranking) %> |
+<%= link_to 'Back', draft_rankings_path %>

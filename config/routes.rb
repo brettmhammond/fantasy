@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
+  resources :draft_projections
+
+  resources :draft_rankings
+
+  resources :auction_values
+
+  resources :byes
+
+  resources :schedules
   resources :draft_picks
-
   resources :drafts
-
   resources :fantasy_teams
-
   resources :leagues
-
   resources :players
-
   resources :teams
-
   resources :positions
   resources :draft
 

@@ -1,0 +1,33 @@
+<h1>Listing draft_rankings</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Year</th>
+      <th>Ffn rank</th>
+      <th>Position rank</th>
+      <th>Overall rank</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @draft_rankings.each do |draft_ranking| %>
+      <tr>
+        <td><%= draft_ranking.player.name %></td>
+        <td><%= draft_ranking.year %></td>
+        <td><%= draft_ranking.ffn_rank %></td>
+        <td><%= draft_ranking.position_rank %></td>
+        <td><%= draft_ranking.overall_rank %></td>
+        <td><%= link_to 'Show', draft_ranking %></td>
+        <td><%= link_to 'Edit', edit_draft_ranking_path(draft_ranking) %></td>
+        <td><%= link_to 'Destroy', draft_ranking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Draft ranking', new_draft_ranking_path %>

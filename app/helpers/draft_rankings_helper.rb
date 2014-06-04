@@ -1,0 +1,2 @@
+module DraftRankingsHelper
+end
