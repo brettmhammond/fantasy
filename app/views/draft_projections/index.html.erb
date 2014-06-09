@@ -1,19 +1,17 @@
-<h1>Listing draft_projections</h1>
+<h4>Player Draft Projections</h4>
 
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>Player</th>
-      <th>Year</th>
       <th>Completions</th>
       <th>Attempts</th>
-      <th>Passing yards</th>
-      <th>Passing td</th>
+      <th>Passing Yards</th>
+      <th>Passing TD</th>
       <th>Passing Int</th>
-      <th>Rush yards</th>
-      <th>Rush td</th>
-      <th>Fantasy points</th>
-      <th colspan="3"></th>
+      <th>Rush Yards</th>
+      <th>Rush TD</th>
+      <th>Fantasy Points</th>
     </tr>
   </thead>
 
@@ -24,7 +22,6 @@
           <img src="<%= draft_projection.player.team.logo %>" width="25" alt="" />
           <%= draft_projection.player.name %> (<%= draft_projection.player.position.position %>)
         </td>
-        <td><%= draft_projection.year %></td>
         <td><%= draft_projection.completions %></td>
         <td><%= draft_projection.attempts %></td>
         <td><%= draft_projection.passing_yards %></td>
@@ -33,14 +30,7 @@
         <td><%= draft_projection.rush_yards %></td>
         <td><%= draft_projection.rush_td %></td>
         <td><%= draft_projection.fantasy_points %></td>
-        <td><%= link_to 'Show', draft_projection %></td>
-        <td><%= link_to 'Edit', edit_draft_projection_path(draft_projection) %></td>
-        <td><%= link_to 'Destroy', draft_projection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Draft projection', new_draft_projection_path %>

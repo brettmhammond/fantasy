@@ -1,6 +1,8 @@
-<h1>Listing draft_picks</h1>
+<%= link_to 'New Draft pick', new_draft_pick_path, :class => 'btn pull-right' %>
+<h4>Listing draft_picks</h4>
+<br>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Draft</th>
@@ -22,7 +24,7 @@
         <td><%= draft_pick.player.position.position %></td>
         <td>
           <img src="<%= draft_pick.player.team.logo %>" width="20"/>
-          <%= draft_pick.player.team.name %> (<%= draft_pick.player.team.short_name %>)
+          <%= draft_pick.player.team.name %> (<%= draft_pick.player.team.key %>)
         </td>
         <td>$<%= draft_pick.price %></td>
         <td><%= link_to 'Show', draft_pick %></td>
@@ -33,6 +35,5 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Draft pick', new_draft_pick_path %>
+

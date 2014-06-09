@@ -1,10 +1,11 @@
-<h1>Listing leagues</h1>
+<%= link_to 'New League', new_league_path, :class => 'btn btn-primary pull-right' %>
+<h4>Fantasy Leagues</h4>
+<br>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Total rounds</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,8 +14,6 @@
     <% @leagues.each do |league| %>
       <tr>
         <td><%= league.name %></td>
-        <td><%= league.total_rounds %></td>
-        <td>$<%= league.max_amount %></td>
         <td><%= link_to 'Show', league %></td>
         <td><%= link_to 'Edit', edit_league_path(league) %></td>
         <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,6 +22,5 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New League', new_league_path %>
+

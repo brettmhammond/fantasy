@@ -8,7 +8,31 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
+      <div class="masthead">
+        <h3>FantasyDraft</h3>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li><%= link_to 'Teams', teams_path %></li>
+                <li><%= link_to 'Schedule', schedules_path %></li>
+                <li><%= link_to 'Byes', byes_path %></li>
+                <li><%= link_to 'Players', players_path %></li>
+                <li><%= link_to 'Positions', positions_path %></li>
+                <li><%= link_to 'Rankings', draft_rankings_path %></li>
+                <li><%= link_to 'Projections', draft_projections_path %></li>
+                <li><%= link_to 'Values', auction_values_path %></li>
+                <li><%= link_to 'Leagues', leagues_path %></li>
+                <li><%= link_to 'Fantasy Teams', fantasy_teams_path %></li>
+                <li><%= link_to 'Drafts', drafts_path %></li>
+                <li><%= link_to 'Draft Picks', draft_picks_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <%= yield %>
 </div>
 </body>

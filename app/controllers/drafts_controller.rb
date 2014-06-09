@@ -135,6 +135,6 @@ class DraftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def draft_params
-      params.require(:draft).permit(:league_id)
+      params.require(:draft).permit(:league_id, :total_rounds, :max_amount)
     end
 end

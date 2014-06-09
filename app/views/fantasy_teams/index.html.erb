@@ -1,6 +1,8 @@
-<h1>Listing fantasy_teams</h1>
+<%= link_to 'New Fantasy team', new_fantasy_team_path, :class => 'btn pull-right' %>
+<h4>Fantasy Teams</h4>
+<br>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -24,6 +26,4 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Fantasy team', new_fantasy_team_path %>

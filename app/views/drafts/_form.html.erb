@@ -15,6 +15,14 @@
     <%= f.label :league_id %><br>
     <%= f.select :league_id, options_from_collection_for_select(League.all.order('name'), "id", "name", @draft.league_id) %>
   </div>
+  <div class="field">
+    <%= f.label :total_rounds %><br>
+    <%= f.number_field :total_rounds %>
+  </div>
+  <div class="field">
+    <%= f.label :max_amount %><br>
+    <%= f.number_field :max_amount %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

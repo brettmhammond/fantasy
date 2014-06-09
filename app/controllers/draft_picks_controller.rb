@@ -16,7 +16,6 @@ class DraftPicksController < ApplicationController
   def new
     @draft = Draft.includes(:league).find(1)
 
-
     @draft_picks = DraftPick.all.where('draft_id', @draft.id)
 
     # raise @draft.league.to_json
@@ -24,12 +23,17 @@ class DraftPicksController < ApplicationController
 
     # raise @draft.to_json
 
-    @players = Player.all.where('id not in (?)',@draft_picks.map(&:player_id)).order('name').includes(:position, :team).map { |p| ["#{p.name} (#{p.position.position}) - #{p.team.short_name} ",p.id]}
+    # .where('id not in (?)',@draft_picks.map(&:player_id))
+    @players = Player.all.order('name').includes(:position, :team).map { |p| ["#{p.name} (#{p.position.position}) - #{p.team.key} ",p.id]}
     @draft_pick = DraftPick.new
+
+    # raise @players.to_yaml
   end
 
   # GET /draft_picks/1/edit
   def edit
+        @players = Player.all.order('name').includes(:position, :team).map { |p| ["#{p.name} (#{p.position.position}) - #{p.team.key} ",p.id]}
+
   end
 
   # POST /draft_picks

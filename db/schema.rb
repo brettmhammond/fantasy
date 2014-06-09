@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 20140604023947) do
 
   create_table "drafts", force: true do |t|
     t.integer  "league_id"
+    t.integer  "max_amount"
+    t.integer  "total_rounds"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,8 +98,6 @@ ActiveRecord::Schema.define(version: 20140604023947) do
 
   create_table "leagues", force: true do |t|
     t.string   "name"
-    t.integer  "max_amount"
-    t.integer  "total_rounds"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -17,7 +17,7 @@
     </thead>
     <tbody>
 
-        <% @draft.league.total_rounds.times do |round|  round = round + 1 %>
+        <% @draft.total_rounds.times do |round|  round = round + 1 %>
             <tr>
                 <td><%= round %></td>
 
@@ -28,7 +28,7 @@
 
                                 if pick.fantasy_team.id == fantasy_team.id && pick.round == round
                             %>
-                                     <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.short_name.upcase %> - $<%= pick.price %>
+                                     <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.key %> - $<%= pick.price %>
                             <%
                                 end
                             end
@@ -50,9 +50,18 @@
 
 <h5>Draft Picks</h5>
 <% @draft.draft_picks.each do |pick| %>
-     <%= pick.fantasy_team.name %> - <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.short_name %> - $<%= pick.price %> / $<%= @draft.league.max_amount - pick.price %> <br />
+     <%= pick.fantasy_team.name %> - <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.key %> - $<%= pick.price %> / $<%= @draft.max_amount - pick.price %> <br />
 <% end %>
 
+<p>
+  <strong>Total rounds:</strong>
+  <%= @draft.total_rounds %>
+</p>
+
+<p>
+  <strong>Max Amount:</strong>
+  $<%= @draft.max_amount %>
+</p>
 
 
 
