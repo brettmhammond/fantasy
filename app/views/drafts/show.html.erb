@@ -1,9 +1,19 @@
-<h1>
-    <center><%= @draft.league.name %></center>
-</h1>
+<div class="draft_order">
+    <% @draft.total_rounds.times do |round|%>
+        <div class="draft_order__round_slot">
+            Round: <%= round + 1 %>
+        </div>
+        <% @draft_teams.each do |draft_team| %>
+            <div class="draft_order__slot">
+                <%= draft_team.fantasy_team.name %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+<br />
+<br />
 
-
-<diw class="row">
+<div class="row">
     <div class="span11">
 
         <table class="table table-bordered">
@@ -11,19 +21,19 @@
                 <tr>
                     <th style="text-align:center">RD</th>
                     <%
-                        @draft.league.fantasy_teams.each do |fantasy_team|
+                        @draft_teams.each.each do |draft_team|
 
                             total_picks = 0;
                             total_spent = 0;
-                            fantasy_team.draft_picks.where(draft_id: @draft.id).each do |pick|
+                            draft_team.fantasy_team.draft_picks.where(draft_id: @draft.id).each do |pick|
                                 total_spent += pick.price
                                 total_picks += 1
                             end
 
                     %>
-                            <th id="draft_header_team_<%= fantasy_team.id %>">
+                            <th id="draft_header_team_<%= draft_team.fantasy_team.id %>">
                                 <center>
-                                    <%= fantasy_team.name %>
+                                    <%= draft_team.fantasy_team.name %>
                                     <span class="pull-right">
                                         Max Bid: $<%= @draft.max_amount - total_spent - (@draft.total_rounds - total_picks)  %>
                                     </span>
@@ -38,10 +48,10 @@
                     <tr>
                         <td style="text-align:center"><%= round %></td>
 
-                        <% @draft.league.fantasy_teams.each do |fantasy_team| %>
-                            <td id="draft_row_team_<%= fantasy_team.id %>_<%= round %>">
+                        <% @draft_teams.each.each do |draft_team| %>
+                            <td id="draft_row_team_<%= draft_team.fantasy_team.id %>_<%= round %>">
                                 <%
-                                    fantasy_team.draft_picks.where(draft_id: @draft.id).each do |pick|
+                                    draft_team.fantasy_team.draft_picks.where(draft_id: @draft.id).each do |pick|
 
                                         if pick.round == round
                                     %>

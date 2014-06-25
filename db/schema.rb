@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604023947) do
+ActiveRecord::Schema.define(version: 20140625011008) do
 
   create_table "auction_values", force: true do |t|
     t.integer  "player_id"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20140604023947) do
   end
 
   add_index "byes", ["team_id"], name: "index_byes_on_team_id"
+
+  create_table "draft_fantasy_teams", force: true do |t|
+    t.integer "draft_id"
+    t.integer "fantasy_team_id"
+    t.integer "position"
+  end
+
+  add_index "draft_fantasy_teams", ["draft_id"], name: "index_draft_fantasy_teams_on_draft_id"
+  add_index "draft_fantasy_teams", ["fantasy_team_id"], name: "index_draft_fantasy_teams_on_fantasy_team_id"
 
   create_table "draft_picks", force: true do |t|
     t.integer  "draft_id"

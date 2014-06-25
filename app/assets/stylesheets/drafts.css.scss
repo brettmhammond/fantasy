@@ -25,3 +25,22 @@
 
     }
 }
+
+.draft_order{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height:52px;
+    white-space:nowrap;
+
+    .draft_order__round_slot, .draft_order__slot{
+        display:inline-block;
+        width:100px;
+        height:50px;
+        border:1px solid #999;
+        text-align: center
+    }
+
+    .draft_order__round_slot{
+        background-color: #E6E6E6;
+    }
+}
