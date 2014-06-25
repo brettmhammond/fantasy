@@ -10,7 +10,7 @@
   <tbody>
     <% @byes.each do |bye| %>
       <tr>
-        <td><img src="<%= bye.team.logo %>" width="25" alt="" /> <%= bye.team.full_name %></td>
+        <td><%= image_tag("team_logos/#{bye.team.id}.png", width: "25", alt: bye.team.name)%> <%= bye.team.full_name %></td>
         <td><%= bye.week %></td>
       </tr>
     <% end %>

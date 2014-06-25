@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :byes
 
   resources :schedules
-  resources :draft_picks
+  # resources :draft_picks
   resources :drafts
   resources :fantasy_teams
   resources :leagues
@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   resources :teams
   resources :positions
   resources :draft
+
+
+  resources :drafts do
+    resources :draft_picks
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

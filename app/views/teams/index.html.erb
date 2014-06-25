@@ -3,6 +3,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th>ID</th>
       <th>City</th>
       <th>Name</th>
       <th>Conference</th>
@@ -14,12 +15,15 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr>
+        <td><%= team.id %></td>
         <td><%= team.city %></td>
         <td><%= team.name %></td>
         <td><%= team.conference %></td>
         <td><%= team.division %></td>
-        <td><img src="<%= team.logo %>" width="25" alt="" /></td>
+        <td><%= image_tag("team_logos/#{team.id}.png", width: "25", alt: team.name)%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+

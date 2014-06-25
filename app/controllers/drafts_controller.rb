@@ -13,69 +13,8 @@ class DraftsController < ApplicationController
   # GET /drafts/1
   # GET /drafts/1.json
   def show
-
-
-
-
-
-
-    # doc = Nokogiri::HTML(open("http://fantasydata.com/nfl-stats/nfl-fantasy-football-rankings-adp.aspx"))
-
-    # rows = doc.xpath("//table")
-
-    # rows.each do |row|
-
-
-    #   row.css('tr')[3].each do |column|
-    #       # puts row.css('td')[0].text
-    #       puts column.css('td')[1].text
-    #       puts column.css('td')[2].text
-    #       puts column.css('td')[3].text
-    #       puts column.css('td')[4].text
-    #       puts column.css('td')[5].text
-    #       puts column.css('td')[6].text
-    #       puts column.css('td')[7].text
-    #       puts column.css('td')[8].text
-    #       puts column.css('td')[9].text
-    #       puts column.css('td')[10].text
-    #       puts column.css('td')[11].text
-    #       puts column.css('td')[12].text
-    #       puts column.css('td')[13].text
-    #       puts column.css('td')[14].text
-
-
-
-    #   end
-
-
-
-    # end
-
-
-
-
-    # raise rows.to_json
-    # doc.search('table#StatsGrid > tr').each do |row|
-    #     row.search('td/font/text()').each do |col|
-    #       puts col.to_s
-    #     end
-    # end
-
-    # raise doc.to_json
-
-    # rows.each do |row|
-    #     position = Position.find_by_position(row.css('td')[1].text)
-    #     team     = Team.find_by_name(row.css('td')[2].text)
-
-    #     Player.create(name: row.css('td')[0].text, position_id: position.id, team_id: team.id)
-    # end
-
-
-
     @players = Player.all.order('name').includes(:position, :team)
     @draft = Draft.includes(:league, :draft_picks).find(params[:id])
-
-
   end
 
   # GET /drafts/new

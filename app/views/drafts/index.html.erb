@@ -9,7 +9,7 @@
       <th>League</th>
       <th>Total Rounds</th>
       <th>Max Amount</th>
-      <th colspan="2"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -20,6 +20,8 @@
         <td><%= draft.league.name %></td>
         <td><%= draft.total_rounds %></td>
         <td>$<%= draft.max_amount %></td>
+        <td><%= link_to 'Draft Board', draft_path(draft) %></td>
+        <td><%= link_to 'Draft Picks', draft_draft_picks_path(draft) %></td>
         <td><%= link_to 'Edit', edit_draft_path(draft) %></td>
         <td><%= link_to 'Destroy', draft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

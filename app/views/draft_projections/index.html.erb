@@ -19,7 +19,7 @@
     <% @draft_projections.each do |draft_projection| %>
       <tr>
         <td width="200">
-          <img src="<%= draft_projection.player.team.logo %>" width="25" alt="" />
+          <%= image_tag("team_logos/#{draft_projection.player.team.id}.png", width: "25", alt: draft_projection.player.team.name)%>
           <%= draft_projection.player.name %> (<%= draft_projection.player.position.position %>)
         </td>
         <td><%= draft_projection.completions %></td>

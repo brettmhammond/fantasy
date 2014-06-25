@@ -2,71 +2,98 @@
     <center><%= @draft.league.name %></center>
 </h1>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th></th>
-            <% @draft.league.fantasy_teams.each do |fantasy_team| %>
-                <th>
-                    <center>
-                        <%= fantasy_team.name %>
-                    </center>
-                </th>
-            <% end %>
-        </tr>
-    </thead>
-    <tbody>
 
-        <% @draft.total_rounds.times do |round|  round = round + 1 %>
-            <tr>
-                <td><%= round %></td>
+<diw class="row">
+    <div class="span11">
 
-                <% @draft.league.fantasy_teams.each do |fantasy_team| %>
-                    <td>
-                        <%
-                            @draft.draft_picks.each do |pick|
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="text-align:center">RD</th>
+                    <%
+                        @draft.league.fantasy_teams.each do |fantasy_team|
 
-                                if pick.fantasy_team.id == fantasy_team.id && pick.round == round
-                            %>
-                                     <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.key %> - $<%= pick.price %>
-                            <%
-                                end
+                            total_picks = 0;
+                            total_spent = 0;
+                            fantasy_team.draft_picks.where(draft_id: @draft.id).each do |pick|
+                                total_spent += pick.price
+                                total_picks += 1
                             end
 
-                        %>
-                    </td>
+                    %>
+                            <th id="draft_header_team_<%= fantasy_team.id %>">
+                                <center>
+                                    <%= fantasy_team.name %>
+                                    <span class="pull-right">
+                                        Max Bid: $<%= @draft.max_amount - total_spent - (@draft.total_rounds - total_picks)  %>
+                                    </span>
+                                </center>
+                            </th>
+                    <% end %>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% @draft.total_rounds.times do |round|  round = round + 1 %>
+                    <tr>
+                        <td style="text-align:center"><%= round %></td>
+
+                        <% @draft.league.fantasy_teams.each do |fantasy_team| %>
+                            <td id="draft_row_team_<%= fantasy_team.id %>_<%= round %>">
+                                <%
+                                    fantasy_team.draft_picks.where(draft_id: @draft.id).each do |pick|
+
+                                        if pick.round == round
+                                    %>
+                                            <span class="pull-right label label-info">$<%= pick.price %></span>
+                                            <%= image_tag("team_logos/#{pick.player.team.id}.png", width: "20", alt: pick.player.team.name)%>
+
+                                             <%= pick.player.name %> - <%= pick.player.position.position %>
+                                    <%
+                                        end
+                                    end
+
+                                %>
+                            </td>
+                        <% end %>
+
+                    </tr>
                 <% end %>
 
-            </tr>
-        <% end %>
-
-    </tbody>
-</table>
+            </tbody>
+        </table>
 
 
+    </div>
+    <div class="span3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Previous Picks</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @draft.draft_picks.reverse.each do |pick| %>
+                    <tr>
+                        <td><%= pick.player.name %></td>
+                        <td>$<%= pick.price %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<%= subscribe_to "/draft_picks/new" %>
+
+<script type="text/javascript">
+$(document).ready(function(){
 
 
 
 
-<h5>Draft Picks</h5>
-<% @draft.draft_picks.each do |pick| %>
-     <%= pick.fantasy_team.name %> - <%= pick.player.name %> (<%= pick.player.position.position %>) - <%= pick.player.team.key %> - $<%= pick.price %> / $<%= @draft.max_amount - pick.price %> <br />
-<% end %>
 
-<p>
-  <strong>Total rounds:</strong>
-  <%= @draft.total_rounds %>
-</p>
-
-<p>
-  <strong>Max Amount:</strong>
-  $<%= @draft.max_amount %>
-</p>
-
-
-
-<br />
-<br />
-<br />
-<%= link_to 'Edit', edit_draft_path(@draft) %> |
-<%= link_to 'Back', drafts_path %>
+});
+</script>

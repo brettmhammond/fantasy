@@ -14,7 +14,6 @@ Team.create([
         key: 'ARI',
         conference: 'NFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/22.png',
     },
     {
         city: 'Atlanta',
@@ -22,7 +21,6 @@ Team.create([
         key: 'ATL',
         conference: 'NFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/1.png',
     },
     {
         city: 'Baltimore',
@@ -30,7 +28,6 @@ Team.create([
         key: 'BAL',
         conference: 'AFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/33.png',
     },
     {
         city: 'Buffalo',
@@ -38,7 +35,6 @@ Team.create([
         key: 'BUF',
         conference: 'AFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/2.png',
     },
     {
         city: 'Carolina',
@@ -46,7 +42,6 @@ Team.create([
         key: 'CAR',
         conference: 'NFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/29.png',
     },
     {
         city: 'Chicago',
@@ -54,7 +49,6 @@ Team.create([
         key: 'CHI',
         conference: 'NFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/3.png',
     },
     {
         city: 'Cincinnati',
@@ -62,7 +56,6 @@ Team.create([
         key: 'CIN',
         conference: 'AFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/4.png',
     },
     {
         city: 'Cleveland',
@@ -70,7 +63,6 @@ Team.create([
         key: 'CLE',
         conference: 'AFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/5.png',
     },
     {
         city: 'Dallas',
@@ -78,7 +70,6 @@ Team.create([
         key: 'DAL',
         conference: 'NFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/6.png',
     },
     {
         city: 'Denver',
@@ -86,7 +77,6 @@ Team.create([
         key: 'DEN',
         conference: 'AFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/7.png',
     },
     {
         city: 'Detroit',
@@ -94,7 +84,6 @@ Team.create([
         key: 'DET',
         conference: 'NFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/8.png',
     },
     {
         city: 'Green Bay',
@@ -102,7 +91,6 @@ Team.create([
         key: 'GB',
         conference: 'NFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/9.png',
     },
     {
         city: 'Houston',
@@ -110,7 +98,6 @@ Team.create([
         key: 'HOU',
         conference: 'AFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/34.png',
     },
     {
         city: 'Indianapolis',
@@ -118,7 +105,6 @@ Team.create([
         key: 'IND',
         conference: 'AFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/11.png',
     },
     {
         city: 'Jacksonville',
@@ -126,7 +112,6 @@ Team.create([
         key: 'JAC',
         conference: 'AFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/30.png',
     },
     {
         city: 'Kansas City',
@@ -134,7 +119,6 @@ Team.create([
         key: 'KC',
         conference: 'AFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/12.png',
     },
     {
         city: 'Miami',
@@ -142,7 +126,6 @@ Team.create([
         key: 'MIA',
         conference: 'AFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/15.png',
     },
     {
         city: 'Minnesota',
@@ -150,7 +133,6 @@ Team.create([
         key: 'MIN',
         conference: 'NFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/16.png',
     },
     {
         city: 'New England',
@@ -158,7 +140,6 @@ Team.create([
         key: 'NE',
         conference: 'AFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/17.png',
     },
     {
         city: 'New Orleans',
@@ -166,7 +147,6 @@ Team.create([
         key: 'NO',
         conference: 'NFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/18.png',
     },
     {
         city: 'New York',
@@ -174,7 +154,6 @@ Team.create([
         key: 'NYG',
         conference: 'NFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/19.png',
     },
     {
         city: 'New York',
@@ -182,7 +161,6 @@ Team.create([
         key: 'NYJ',
         conference: 'AFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/20.png',
     },
     {
         city: 'Oakland',
@@ -190,7 +168,6 @@ Team.create([
         key: 'OAK',
         conference: 'AFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/13.png',
     },
     {
         city: 'Philadelphia',
@@ -198,7 +175,6 @@ Team.create([
         key: 'PHI',
         conference: 'NFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/21.png',
     },
     {
         city: 'Pittsburgh',
@@ -206,7 +182,6 @@ Team.create([
         key: 'PIT',
         conference: 'AFC',
         division: 'North',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/23.png',
     },
     {
         city: 'San Diego',
@@ -214,7 +189,6 @@ Team.create([
         key: 'SD',
         conference: 'AFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/24.png',
     },
     {
         city: 'San Francisco',
@@ -222,7 +196,6 @@ Team.create([
         key: 'SF',
         conference: 'NFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/25.png',
     },
     {
         city: 'Seattle',
@@ -230,7 +203,6 @@ Team.create([
         key: 'SEA',
         conference: 'NFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/26.png',
     },
     {
         city: 'St. Louis',
@@ -238,7 +210,6 @@ Team.create([
         key: 'STL',
         conference: 'NFC',
         division: 'West',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/14.png',
     },
     {
         city: 'Tampa Bay',
@@ -246,7 +217,6 @@ Team.create([
         key: 'TB',
         conference: 'NFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/27.png',
     },
     {
         city: 'Tennessee',
@@ -254,7 +224,6 @@ Team.create([
         key: 'TEN',
         conference: 'AFC',
         division: 'South',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/10.png',
     },
     {
         city: 'Washington',
@@ -262,7 +231,6 @@ Team.create([
         key: 'WAS',
         conference: 'NFC',
         division: 'East',
-        logo: 'http://static.foxsports.com/fe/images/NFL/TeamLogo/Large/28.png',
     }
 ])
 

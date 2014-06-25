@@ -14,7 +14,7 @@
     <% @draft_rankings.each do |draft_ranking| %>
       <tr>
         <td width="200">
-          <img src="<%= draft_ranking.player.team.logo %>" width="25" alt="" />
+          <%= image_tag("team_logos/#{draft_ranking.player.team.id}.png", width: "25", alt: draft_ranking.player.team.name)%>
           <%= draft_ranking.player.name %> (<%= draft_ranking.player.position.position %>)
         </td>
         <td><%= draft_ranking.ffn_rank %></td>

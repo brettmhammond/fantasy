@@ -14,7 +14,7 @@
     <% @auction_values.each do |auction_value| %>
       <tr>
         <td width="200">
-          <img src="<%= auction_value.player.team.logo %>" width="25" alt="" />
+          <%= image_tag("team_logos/#{auction_value.player.team.id}.png", width: "25", alt: auction_value.player.team.name)%>
           <%= auction_value.player.name %> (<%= auction_value.player.position.position %>)
         </td>
         <td>$<%= auction_value.min_price %></td>
