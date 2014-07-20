@@ -1,3 +1,10 @@
+#draft_board_layout{
+    background-color: black;
+    table{
+        background-color:white;
+    }
+}
+
 .draft_board{
     width: auto;
     height: auto;
@@ -27,20 +34,36 @@
 }
 
 .draft_order{
+    margin-top: 20px;
     overflow-x: scroll;
     overflow-y: hidden;
     height:52px;
     white-space:nowrap;
 
-    .draft_order__round_slot, .draft_order__slot{
+
+    .draft_order__slot{
         display:inline-block;
         width:100px;
         height:50px;
         border:1px solid #999;
-        text-align: center
+        text-align: center;
+        background-color: #fff;
+
+    }
+
+    .draft_order__slot:first-child{
+        border-color:red;
+        background-color: red;
+
     }
 
     .draft_order__round_slot{
+        display:inline-block;
+        width:100px;
+        height:50px;
+        border:1px solid #999;
+        text-align: center;
+        background-color: #fff;
         background-color: #E6E6E6;
     }
 }

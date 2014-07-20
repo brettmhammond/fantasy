@@ -13,9 +13,12 @@ class DraftsController < ApplicationController
   # GET /drafts/1
   # GET /drafts/1.json
   def show
+
     @players     = Player.all.order('name').includes(:position, :team)
     @draft       = Draft.includes(:league, :draft_picks).find(params[:id])
     @draft_teams = @draft.draft_fantasy_teams.order(position: :asc)
+
+    render layout: "draft_board"
   end
 
   # GET /drafts/new
